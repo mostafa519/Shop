@@ -25,28 +25,24 @@ export default function FooterComponent() {
         </div>
 
         <div>
-          <a
-            href="https://www.facebook.com/profile.php?id=100007115927987"
+          <a 
             target="_blank"
             className="me-4 text-reset"
           >
             <FaFacebook style={{ fontSize: "30px" }} />
           </a>
-          <a
-            href="https://github.com/mostafa519"
+          <a 
             target="_blank"
             className="me-4 text-reset"
           >
             <FaGithub style={{ fontSize: "30px" }} />
           </a>
-          <a
-            href="mailto:engmostafa51999@gmail.com"
+          <a 
             className="me-4 text-reset"
           >
             <FaGoogle style={{ fontSize: "30px" }} />
           </a>
-          <a
-            href="https://www.linkedin.com/in/eng-mostafa-4a228519b/"
+          <a 
             target="_blank"
             className="me-4 text-reset"
           >
@@ -55,9 +51,9 @@ export default function FooterComponent() {
           <a
             className="me-4 text-reset"
             target="_blank"
-            onClick={() => {
-              window.print();
-            }}
+            // onClick={() => {
+            //   window.print();
+            // }}
           >
             <FaDownload style={{ fontSize: "30px" }} />
           </a>

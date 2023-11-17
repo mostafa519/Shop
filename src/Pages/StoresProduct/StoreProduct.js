@@ -7,12 +7,29 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import RemoveFromStore from "../../Store/Actions/RemoveFromCard";
 import ShowDetails from "../../Store/Actions/Details";
+import Swal from 'sweetalert2'
 
 const StoreProduct = () => { 
     const MyProducts=useSelector((state)=>state.Products);
     const dispatch =useDispatch();
     const handleRemoveProduct=(Product)=>{
       dispatch(RemoveFromStore(Product));
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'center',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Remove From Store'
+      })
     }
     const showDetails=(product)=>{ 
       dispatch(ShowDetails(product))

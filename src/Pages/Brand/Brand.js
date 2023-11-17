@@ -3,19 +3,18 @@ import React from 'react';
 import { FaHeart } from "react-icons/fa";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import "./Tshart.css" 
-import Container from 'react-bootstrap/esm/Container'; 
-import RemoveFromStore from '../../../Store/Actions/RemoveFromCard';
-import AddToStore from '../../../Store/Actions/AddedToCard';
+import Row from "react-bootstrap/Row"; 
+import Container from 'react-bootstrap/esm/Container';  
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import { useDispatch, useSelector } from 'react-redux';
+import RemoveFromStore from '../../Store/Actions/RemoveFromCard';
+import AddToStore from '../../Store/Actions/AddedToCard';
+import ShowDetails from '../../Store/Actions/Details';
 
-import ShowDetails from '../../../Store/Actions/Details'; 
-import { useDispatch } from 'react-redux';
-
-const TShart = ({tShart,MyProducts,FieldName}) => {
+const Brand = ({brand }) => {
   const dispatch = useDispatch(); 
+  const MyProducts = useSelector((state) => state.Products)
    const isFav = (product) => {
     return MyProducts.some((Product) => Product.id == product.id);
   };
@@ -69,10 +68,10 @@ const TShart = ({tShart,MyProducts,FieldName}) => {
 
       <Container className='mt-2'>
 
-      <h3>{FieldName}</h3>
+      <h3>Brands</h3>
         <hr></hr>
         <Row xs={1} md={3} xl={5} className="g-4">
-          {tShart.map((Product, index) => (
+          {brand.map((Product, index) => (
             <Col key={index}>
               <Card>
                 <Link onClick={() => showDetails(Product)} to={`/details`} >  <Card.Img className="ImagesEdit" src={Product.data.image} /></Link>
@@ -119,4 +118,4 @@ const TShart = ({tShart,MyProducts,FieldName}) => {
   );
 }
 
-export default TShart;
+export default Brand;

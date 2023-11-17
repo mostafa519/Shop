@@ -1,0 +1,23 @@
+.BackgroundDash{  
+    background-image: url(" https://media.gettyimages.com/photos/warehouse-worker-walks-between-racks-of-costumes-at-angels-the-on-picture-id82118126");
+    min-height: 100vh;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white; 
+    position: relative;
+    opacity: 0.7;  
+ }
+.BackgroundDash2{ 
+    width: 60%;
+    height: 95%; 
+    background-image: url("https://th.bing.com/th/id/R.e4c23f8b87c84e2173b32eeff2a286ab?rik=kqMtRLjHcZYwXg&pid=ImgRaw&r=0");
+    position: absolute;
+    left: 20%;
+    top: 5%;
+    opacity: 0.8;
+    box-shadow: 10px 5px 5px black;
+    box-sizing: content-box;
+
+}

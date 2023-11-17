@@ -22,7 +22,7 @@
       }
 }
  
-.ImageEdit:hover{
+.ImagesEdit:hover{
     opacity: 0.6 !important;
     animation: 3s infinite ImagesEditting;
     z-index: 10;

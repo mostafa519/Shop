@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Col, Container, Row } from "react-bootstrap";
+import React, {  useState } from "react";
+import { Link } from "react-router-dom";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import "./details.css";
 import {
   IoIosCheckmarkCircleOutline,
@@ -14,12 +14,13 @@ import {
   FaFacebook,
   FaTwitter,
   FaLinkedin,
-  FaWhatsapp,
+  FaWhatsapp ,FaArrowRight
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import AddToStore from "../../../Store/Actions/AddedToCard";
-const Details = () => {
-
+import ShowDetails from "../../../Store/Actions/Details";
+import Rate from "../../Rate/Rate";
+const Details = () => { 
   const product = useSelector((state) => state.Details)
   const [quntity, setQuntity] = useState(1);
   const MyProducts = useSelector((state) => state.Products)
@@ -41,6 +42,12 @@ const Details = () => {
       setQuntity((q) => q - 1);
     }
   };
+ 
+  const showDetails = (product) => {
+    dispatch(ShowDetails(product))
+  }
+  var today = new Date();
+  const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
   return (
     <Container className="details mt-5">
       <Row>
@@ -81,7 +88,7 @@ const Details = () => {
                   </div>
                 </div>
                 <div className=" wrap-size mt-2">
-                  <h5>size</h5>
+                  <h5><Rate rate={product.data.rate}></Rate></h5>
                   {/* <div className="product-details-size ">
                       {colorID > 0 && (
                         <ItemSize colorID={colorID} clotheID={clotheID} />
@@ -144,37 +151,33 @@ const Details = () => {
             </Col>
             <Col className="col-lg-4 col-md-4">
               <div className="sg-seller-product pb-sm-3 w-100">
-                {/* <Card>
-                    {tShart.map((img) => (
-                      <div className="img-shop position-relative" key={img.id}>
-                        <Card.Img variant="top" src={img.data.image} />
-                        <img src={img.icon} className="seller-logo" />
-                      </div>
-                    ))}
-                    {/* <Card.Body className="d-flex justify-content-between">
+                <Card> 
+                      <div className="img-shop position-relative" key={product.id}>
+                          <Card.Img variant="top" src={product.data.image} />  
+                        <img src={product.icon} className="seller-logo" />
+                      </div> 
+                    <Card.Body className="d-flex justify-content-between">
                       <div>
-                        <p>Products: 16</p>
-                        <p>Joined: 27 Mar 2022</p>
+                        <p>Products: {product.data.name}</p>
+                        <p>Joined: {date}</p>
                       </div>
-                      <Link className=" store">
-                        {" "}
+                      <Link className=" store" to={"/storeProduct"}>
+                       
                         VISIT STORE <FaArrowRight className="ms-2" />
                       </Link>
                     </Card.Body>  
-                  </Card> */}
+                  </Card>
                 <div className="chat my-3">
                   <BsChatLeftDots /> Chat With Seller
                 </div>
                 <div className="product-widget-recent-entries">
-                  <h4>Recent Products</h4>
-                  <ul className="global-list p-0">
-                    <li className="mb-3">
-                      <div className="shop">
-                        <div className="thumb"></div>
-                        <div className="info"></div>
-                      </div>
-                    </li>
-                  </ul>
+                  <h4>Recent Products</h4> 
+                    <Row xs={1} md={3} xl={3} className="g-4">
+          {MyProducts.map((Product, index) => (
+            <Col key={index}>
+              <Card>
+                <Link onClick={() => showDetails(Product)} to={`/details`} >  <Card.Img className="ImagesEditdetails" src={Product.data.image} /></Link>
+                </Card></Col>))}</Row> 
                 </div>
               </div>
             </Col>
