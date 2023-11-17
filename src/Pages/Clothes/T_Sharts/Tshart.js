@@ -17,7 +17,7 @@ import { useDispatch } from 'react-redux';
 const TShart = ({tShart,MyProducts,FieldName}) => {
   const dispatch = useDispatch(); 
    const isFav = (product) => {
-    return MyProducts.some((Product) => Product.id == product.id);
+    return MyProducts.some((Product) => Product.id === product.id);
   };
 
   const handleAddToFav = (Product) => {

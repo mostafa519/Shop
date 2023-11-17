@@ -1,4 +1,4 @@
-import React, {  useMemo, useState } from 'react';
+import React, {   useState } from 'react';
 import './Register.css'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';

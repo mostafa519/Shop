@@ -26,7 +26,7 @@ const Details = () => {
   const MyProducts = useSelector((state) => state.Products)
   const dispatch = useDispatch();
   const isFav = (products) => {
-    return MyProducts.some((Product) => Product.id == products.id);
+    return MyProducts.some((Product) => Product.id === products.id);
   };
 
   const handleAddToFav = (Product) => {
@@ -153,8 +153,8 @@ const Details = () => {
               <div className="sg-seller-product pb-sm-3 w-100">
                 <Card> 
                       <div className="img-shop position-relative" key={product.id}>
-                          <Card.Img variant="top" src={product.data.image} />  
-                        <img src={product.icon} className="seller-logo" />
+                          <Card.Img variant="top" src={product.data.image} alt="Error"/>  
+                        <img src={product.icon} className="seller-logo" alt="Error"/>
                       </div> 
                     <Card.Body className="d-flex justify-content-between">
                       <div>

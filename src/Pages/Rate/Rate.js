@@ -4,7 +4,7 @@ import "./Rate.css";
 const Rate = ({ rate }) => {
   return (
     <div className="rate text-center">
-      {rate == 10 ? (
+      {rate === 10 ? (
         <>
           <ImStarFull />
           <ImStarFull />
@@ -12,7 +12,7 @@ const Rate = ({ rate }) => {
           <ImStarFull />
           <ImStarFull />
         </>
-      ) : rate == 9  ? (
+      ) : rate === 9  ? (
         <>
           <ImStarFull />
           <ImStarFull />
@@ -20,7 +20,7 @@ const Rate = ({ rate }) => {
           <ImStarFull />
           <ImStarHalf />
         </>
-      ) : rate == 8? (
+      ) : rate === 8? (
         <>
           <ImStarFull />
           <ImStarFull />
@@ -28,7 +28,7 @@ const Rate = ({ rate }) => {
           <ImStarFull />
           <ImStarEmpty />
         </>
-      ) : rate == 7 ? (
+      ) : rate === 7 ? (
         <>
           <ImStarFull />
           <ImStarFull />
@@ -36,7 +36,7 @@ const Rate = ({ rate }) => {
           <ImStarHalf />
           <ImStarEmpty />
         </>
-      ) : rate == 6 ? (
+      ) : rate === 6 ? (
         <>
           <ImStarFull />
           <ImStarFull />
@@ -44,7 +44,7 @@ const Rate = ({ rate }) => {
           <ImStarEmpty />
           <ImStarEmpty />
         </>
-      ) : rate == 5 ? (
+      ) : rate === 5 ? (
         <>
           <ImStarFull />
           <ImStarFull />
@@ -52,7 +52,7 @@ const Rate = ({ rate }) => {
           <ImStarEmpty />
           <ImStarEmpty />
         </>
-      ) : rate == 4 ? (
+      ) : rate === 4 ? (
         <>
           <ImStarFull />
           <ImStarFull />
@@ -60,7 +60,7 @@ const Rate = ({ rate }) => {
           <ImStarEmpty />
           <ImStarEmpty />
         </>
-      ) : rate == 3 ? (
+      ) : rate === 3 ? (
         <>
           <ImStarFull />
           <ImStarHalf />
@@ -68,7 +68,7 @@ const Rate = ({ rate }) => {
           <ImStarEmpty />
           <ImStarEmpty />
         </>
-      ) : rate == 2 ? (
+      ) : rate === 2 ? (
         <>
           <ImStarFull />
           <ImStarEmpty />
@@ -76,7 +76,7 @@ const Rate = ({ rate }) => {
           <ImStarEmpty />
           <ImStarEmpty />
         </>
-      ) : rate == 1 ? (
+      ) : rate === 1 ? (
         <>
           <ImStarHalf />
           <ImStarEmpty />

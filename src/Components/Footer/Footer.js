@@ -11,9 +11,7 @@ import {
   FaGithub,
   FaGoogle,
   FaLinkedin,
-  FaDownload,
-  FaPhoneAlt,
-  FaHouseUser,
+  FaDownload, 
 } from "react-icons/fa";
 import "./Footer.css";
 export default function FooterComponent() {

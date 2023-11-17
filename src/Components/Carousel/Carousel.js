@@ -4,13 +4,13 @@ import Carousel from "react-bootstrap/Carousel";
 
 const Carousell = ({myProduct}) => { 
     return (
-      <Container className="details mt-3">
+      <Container className="details mt-3 " style={{backgroundColor:"red"}}>
       <Row>
-        <Col className="col-12 col-lg-4">
+        <Col className="col-12 col-lg-2">
           <div className="product-slider w-100">
           </div>
         </Col>
-        <Col className="col-12 col-lg-4">
+        <Col className="col-12 col-lg-8">
           <div className="product-slider w-100">
           <Carousel variant="dark">
         {myProduct.map((Product) => (
@@ -21,13 +21,17 @@ const Carousell = ({myProduct}) => {
               src={Product.data.image} 
               alt="First slide"
             />
-            <Carousel.Caption>
+            {/* <Carousel.Caption>
               <h5 style={{ color: "white" }}>  {Product.data.name}</h5>
               <h5 style={{ color: "white" }}>  {Product.data.description}</h5>
-            </Carousel.Caption>
+            </Carousel.Caption> */}
           </Carousel.Item>
         ))}
       </Carousel>
+          </div>
+        </Col>
+        <Col className="col-12 col-lg-2">
+          <div className="product-slider w-100">
           </div>
         </Col>
         </Row>

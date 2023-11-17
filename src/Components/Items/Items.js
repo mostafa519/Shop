@@ -12,7 +12,7 @@ function ListItems({  product }) {
   const MyProducts =useSelector((state)=>state.Products) 
   const dispatch =useDispatch()
   const isFav = (product) => {
-    return MyProducts.some((Product) => Product.id == product.id);
+    return MyProducts.some((Product) => Product.id === product.id);
   };
 
   const handleAddToFav  = (Product) => {
